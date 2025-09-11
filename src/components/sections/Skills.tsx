@@ -31,13 +31,13 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      category: 'Tools & Others',
+      category: 'Design & Creative',
       skills: [
-        { name: 'Git/GitHub', level: 93 },
-        { name: 'Docker', level: 80 },
-        { name: 'AWS', level: 75 },
-        { name: 'Figma', level: 88 },
-        { name: 'Linux', level: 85 }
+        { name: 'Graphic Design', level: 92 },
+        { name: 'Adobe Photoshop', level: 90 },
+        { name: 'Adobe Illustrator', level: 88 },
+        { name: 'Adobe After Effects', level: 85 },
+        { name: 'Figma', level: 88 }
       ]
     }
   ]
@@ -45,7 +45,8 @@ const Skills: React.FC = () => {
   const technologies = [
     'React', 'TypeScript', 'Node.js', 'Python', 'Next.js', 'Vue.js', 
     'Express', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS', 'GraphQL',
-    'Tailwind CSS', 'Framer Motion', 'Three.js', 'Git', 'Linux', 'Figma'
+    'Tailwind CSS', 'Framer Motion', 'Three.js', 'Git', 'Linux', 'Figma',
+    'Photoshop', 'Illustrator', 'After Effects', 'Premiere Pro', 'Graphic Design'
   ]
 
   return (
@@ -58,8 +59,9 @@ const Skills: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            I'm passionate about learning new technologies and constantly expanding my skill set 
-            to stay at the forefront of web development.
+            I'm a Full Stack Developer and Graphic Designer with expertise in both technical development 
+            and creative design. I combine programming skills with visual creativity to deliver 
+            comprehensive digital solutions.
           </p>
         </motion.div>
 

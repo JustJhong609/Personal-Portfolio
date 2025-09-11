@@ -58,14 +58,16 @@ const Hero: React.FC = () => {
             Hello, I'm
           </motion.p>
 
-          {/* Name */}
+          {/* Name Section */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.6 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4"
           >
-            <span className="gradient-text">Jhong</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+              Jhong
+            </span>
           </motion.h1>
 
           {/* Title */}

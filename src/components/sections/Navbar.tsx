@@ -36,13 +36,25 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center"
+            className="flex items-center space-x-3"
           >
             <a
               href="#home"
-              className="text-2xl font-bold gradient-text cursor-pointer"
+              className="flex items-center space-x-3 cursor-pointer group"
             >
-              &lt;Jhong/&gt;
+              {/* Logo - Your uploaded logo */}
+              <div className="w-10 h-10 rounded-lg overflow-hidden group-hover:shadow-lg group-hover:shadow-cyan-400/25 transition-all duration-300 group-hover:scale-105">
+                <img 
+                  src="./logo.png" 
+                  alt="Jhong Logo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Text Logo */}
+              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                &lt;Jhong/&gt;
+              </span>
             </a>
           </motion.div>
 
