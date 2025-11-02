@@ -15,68 +15,35 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment integration, and admin dashboard.',
+      title: 'NORTHERN BUKIDNON STATE COLLEGE Entity Extraction System',
+      description: 'Web-based system that extracts and organizes entities from student research abstracts using Dandelion API and Supabase. Features include automated entity extraction, visualization tools, and role-based access for students and faculty.',
       image: '/api/placeholder/400/250',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+      tags: ['Dandelion API', 'Supabase', 'Entity Extraction', 'Visualization'],
       category: 'fullstack',
-      github: 'https://github.com',
-      live: 'https://demo.com',
+      github: 'https://github.com/JustJhong6099/nbsccite-auth',
+      live: 'https://github.com/JustJhong6099/nbsccite-auth',
       featured: true
     },
     {
       id: 2,
-      title: '3D Portfolio Website',
-      description: 'Interactive 3D portfolio built with Three.js and React. Includes physics simulations and immersive user experience.',
+      title: 'File-Encryption-Decryption',
+      description: 'Enterprise-grade file encryption/decryption utility with comprehensive security features, performance optimizations, and production-ready error handling.',
       image: '/api/placeholder/400/250',
-      tags: ['React', 'Three.js', 'GSAP', 'WebGL'],
-      category: 'frontend',
-      github: 'https://github.com',
-      live: 'https://demo.com',
+      tags: ['Encryption', 'Security', 'File Processing', 'Enterprise'],
+      category: 'backend',
+      github: 'https://github.com/JustJhong609/File-Encryption-Decryption',
+      live: null,
       featured: true
     },
     {
       id: 3,
-      title: 'Task Management API',
-      description: 'RESTful API for task management with authentication, role-based access control, and real-time notifications.',
+      title: 'BUKIDNON ALS CLUSTER I',
+      description: 'A static website for ALS Cluster 1 – Alternative Learning System, built with HTML, and Tailwind CSS cdn for easy access to learning resources.',
       image: '/api/placeholder/400/250',
-      tags: ['Node.js', 'Express', 'MongoDB', 'Socket.io'],
-      category: 'backend',
-      github: 'https://github.com',
-      live: null,
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'React Native Mobile App',
-      description: 'Cross-platform mobile app for fitness tracking with offline capabilities and data synchronization.',
-      image: '/api/placeholder/400/250',
-      tags: ['React Native', 'Redux', 'SQLite', 'Firebase'],
-      category: 'mobile',
-      github: 'https://github.com',
-      live: 'https://demo.com',
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'Data Visualization Dashboard',
-      description: 'Interactive dashboard for data analytics with real-time charts and customizable widgets.',
-      image: '/api/placeholder/400/250',
-      tags: ['Vue.js', 'D3.js', 'Python', 'FastAPI'],
+      tags: ['HTML', 'Tailwind CSS', 'Static Site', 'Education'],
       category: 'frontend',
-      github: 'https://github.com',
-      live: 'https://demo.com',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Microservices Architecture',
-      description: 'Scalable microservices platform with Docker, Kubernetes, and service mesh architecture.',
-      image: '/api/placeholder/400/250',
-      tags: ['Docker', 'Kubernetes', 'Go', 'gRPC'],
-      category: 'backend',
-      github: 'https://github.com',
-      live: null,
+      github: 'https://github.com/JustJhong609/ALS-Cluster-I',
+      live: 'https://als-cluster-i.vercel.app/',
       featured: true
     }
   ]
@@ -206,9 +173,14 @@ const Projects: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="text-center mt-12"
         >
-          <button className="cyber-button">
+          <a
+            href="https://github.com/JustJhong609?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cyber-button inline-block"
+          >
             <span>View All Projects</span>
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
