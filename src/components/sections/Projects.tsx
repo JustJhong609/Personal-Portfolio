@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
       tags: ['Dandelion API', 'Supabase', 'Entity Extraction', 'Visualization'],
       category: 'fullstack',
       github: 'https://github.com/JustJhong6099/nbsccite-auth',
-      live: 'https://github.com/JustJhong6099/nbsccite-auth',
+      live: 'https://www.nbsc-xtract.tech/',
       featured: true
     },
     {
