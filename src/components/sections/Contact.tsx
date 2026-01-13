@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
+    message: ''
+  })
+  const [isSending, setIsSending] = useState(false)
+  const [status, setStatus] = useState<{type: 'success' | 'error' | null, message: string}>({
+    type: null,
     message: ''
   })
 
@@ -17,12 +23,43 @@ const Contact: React.FC = () => {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsSending(true)
+    setStatus({ type: null, message: '' })
+
+    try {
+      // Replace these with your EmailJS credentials
+      // Get them from: https://www.emailjs.com/
+      const result = await emailjs.send(
+        'service_9co301a',      // Replace with your EmailJS Service ID
+        'template_pajmy2s',     // Replace with your EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: '20211199@nbsc.edu.ph'
+        },
+        '2UTMJT2ItaLImj2iG'       // Replace with your EmailJS Public Key
+      )
+
+      if (result.text === 'OK') {
+        setStatus({
+          type: 'success',
+          message: 'Message sent successfully! I\'ll get back to you soon.'
+        })
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or email me directly.'
+      })
+    } finally {
+      setIsSending(false)
+    }
   }
 
   const fadeInUp = {
@@ -42,13 +79,13 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (XXX) XXX-XXXX',
-      href: 'tel:+1XXXXXXXXXX'
+      value: '+63977 254 9585',
+      href: 'tel:+639772549585'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Edmonton, Alberta, CA',
+      value: 'Tankulan, Manolo Fortich, Bukidnon',
       href: '#'
     }
   ]
@@ -151,15 +188,31 @@ const Contact: React.FC = () => {
               
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full cyber-button justify-center"
+                disabled={isSending}
+                whileHover={{ scale: isSending ? 1 : 1.02 }}
+                whileTap={{ scale: isSending ? 1 : 0.98 }}
+                className="w-full cyber-button justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="flex items-center justify-center">
                   <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                  {isSending ? 'Sending...' : 'Send Message'}
                 </span>
               </motion.button>
+
+              {/* Status Message */}
+              {status.type && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg ${
+                    status.type === 'success' 
+                      ? 'bg-green-500/10 border border-green-500/30 text-green-400' 
+                      : 'bg-red-500/10 border border-red-500/30 text-red-400'
+                  }`}
+                >
+                  {status.message}
+                </motion.div>
+              )}
             </form>
           </motion.div>
 

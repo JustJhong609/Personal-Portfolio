@@ -11,23 +11,23 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      category: 'Frontend',
+      category: 'Frontend Development',
       skills: [
-        { name: 'React/Next.js', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'Tailwind CSS', level: 92 },
-        { name: 'Vue.js', level: 85 },
-        { name: 'Three.js', level: 78 }
+        { name: 'React & Ionic', level: 90 },
+        { name: 'Next.js', level: 85 },
+        { name: 'HTML/CSS', level: 95 },
+        { name: 'TypeScript', level: 75 },
+        { name: 'UI/UX Design', level: 88 }
       ]
     },
     {
-      category: 'Backend',
+      category: 'Backend & Database',
       skills: [
-        { name: 'Node.js', level: 88 },
-        { name: 'Python', level: 85 },
-        { name: 'PostgreSQL', level: 82 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'GraphQL', level: 75 }
+        { name: 'Node.js', level: 82 },
+        { name: 'PHP', level: 75 },
+        { name: 'MySQL', level: 80 },
+        { name: 'Supabase', level: 85 },
+        { name: 'SQL', level: 75 }
       ]
     },
     {
@@ -43,10 +43,12 @@ const Skills: React.FC = () => {
   ]
 
   const technologies = [
-    'React', 'TypeScript', 'Node.js', 'Python', 'Next.js', 'Vue.js', 
-    'Express', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS', 'GraphQL',
-    'Tailwind CSS', 'Framer Motion', 'Three.js', 'Git', 'Linux', 'Figma',
-    'Photoshop', 'Illustrator', 'After Effects', 'Premiere Pro', 'Graphic Design'
+    'React', 'Next.js', 'Ionic React', 'TypeScript', 'JavaScript', 'HTML/CSS',
+    'Node.js', 'PHP', 'MySQL', 'Supabase',
+    'Dandelion API', 'Tesseract.js', 'Chart.js',
+    'Git', 'GitHub', 'Tailwind CSS', 'UI/UX Design',
+    'OCR', 'Entity Extraction', 'Data Visualization', 'API Integration',
+    'Figma', 'Photoshop', 'Illustrator', 'After Effects', 'Graphic Design'
   ]
 
   return (
@@ -59,9 +61,9 @@ const Skills: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            I'm a Full Stack Developer and Graphic Designer with expertise in both technical development 
-            and creative design. I combine programming skills with visual creativity to deliver 
-            comprehensive digital solutions.
+            As a Full Stack Developer and UI/UX Designer, I specialize in creating responsive web applications 
+            with React and Ionic, implementing intuitive user interfaces, and integrating APIs with backend services. 
+            I excel at combining technical development with visual design to deliver comprehensive digital solutions.
           </p>
         </motion.div>
 

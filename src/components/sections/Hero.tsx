@@ -63,12 +63,22 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4"
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-2"
           >
             <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
               Jhong
             </span>
           </motion.h1>
+
+          {/* Full Name */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75 }}
+            className="text-lg sm:text-xl text-gray-400 mb-4 tracking-wider"
+          >
+            ALJHON G EMATA
+          </motion.p>
 
           {/* Title */}
           <motion.h2
@@ -98,12 +108,20 @@ const Hero: React.FC = () => {
             transition={{ delay: 1.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <button className="cyber-button">
+            <button 
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="cyber-button"
+            >
               <span>View My Work</span>
             </button>
-            <button className="cyber-button border-accent-500 text-accent-400 hover:text-dark-900">
+            <a 
+              href="https://drive.google.com/file/d/1OF8kY3fBwVz6HK_U6VLwpM1x8aHQUMQ4/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cyber-button border-accent-500 text-accent-400 hover:text-dark-900"
+            >
               <span>Download CV</span>
-            </button>
+            </a>
           </motion.div>
 
           {/* Social Links */}

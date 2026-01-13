@@ -47,27 +47,27 @@ const About: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Panel - Content */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-6 gradient-text">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-2 gradient-text">
               Hello, I'm Jhong
             </h3>
+            <p className="text-lg text-gray-400 mb-6 tracking-wider">
+              ALJHON G EMATA
+            </p>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I'm a passionate developer based in Edmonton, Alberta, who loves creating innovative 
-                digital solutions that make a difference. With a strong foundation in 
-                modern web technologies and a keen eye for user experience, I transform 
-                complex ideas into elegant, functional applications.
+                I'm a passionate Full Stack Developer and UI/UX Designer based in Tankulan, Manolo Fortich, Bukidnon, 
+                currently pursuing my Bachelor of Science in Information Technology at Northern Bukidnon State College.
               </p>
               <p>
-                My journey in technology has been driven by curiosity and a constant 
-                desire to learn and grow. I believe in writing clean, maintainable code 
-                and creating digital experiences that not only look stunning but also 
-                deliver exceptional performance.
+                I specialize in designing and developing responsive web applications using React, Next.js, and Ionic React. 
+                My expertise spans from implementing intuitive UI/UX principles to integrating APIs and backend services 
+                using Node.js, PHP, MySQL, and Supabase. I'm passionate about building data visualization dashboards 
+                and creating user-centric solutions through iterative feedback.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new frameworks, 
-                contributing to open-source projects, or sharing knowledge with the 
-                developer community. I'm always excited about the next challenge 
-                and opportunity to create something amazing.
+                As a UI/UX Designer & System Developer, I led the design and development of a web-based OCR & Entity 
+                Extraction System for my capstone project, integrating Tesseract.js for image-to-text processing. 
+                I focus on creating user interfaces that prioritize clarity, accessibility, and research usability.
               </p>
             </div>
 
@@ -78,9 +78,14 @@ const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <button className="cyber-button">
+              <a 
+                href="https://drive.google.com/file/d/1OF8kY3fBwVz6HK_U6VLwpM1x8aHQUMQ4/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cyber-button"
+              >
                 <span>Download Resume</span>
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -127,20 +132,20 @@ const About: React.FC = () => {
               className="grid grid-cols-2 gap-4"
             >
               <div className="glass-effect p-4 text-center">
-                <div className="text-2xl font-bold text-primary-400 mb-1">5+</div>
+                <div className="text-2xl font-bold text-primary-400 mb-1">2</div>
                 <div className="text-gray-400 text-sm">Years Experience</div>
               </div>
               <div className="glass-effect p-4 text-center">
-                <div className="text-2xl font-bold text-accent-400 mb-1">50+</div>
+                <div className="text-2xl font-bold text-accent-400 mb-1">10+</div>
                 <div className="text-gray-400 text-sm">Projects Completed</div>
               </div>
               <div className="glass-effect p-4 text-center">
-                <div className="text-2xl font-bold text-primary-400 mb-1">20+</div>
+                <div className="text-2xl font-bold text-primary-400 mb-1">10+</div>
                 <div className="text-gray-400 text-sm">Technologies</div>
               </div>
               <div className="glass-effect p-4 text-center">
-                <div className="text-2xl font-bold text-accent-400 mb-1">100%</div>
-                <div className="text-gray-400 text-sm">Client Satisfaction</div>
+                <div className="text-2xl font-bold text-accent-400 mb-1">BS IT</div>
+                <div className="text-gray-400 text-sm">NBSC Student</div>
               </div>
             </motion.div>
           </motion.div>
