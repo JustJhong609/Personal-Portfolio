@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
               &lt;Jhong/&gt;
             </h3>
             <p className="text-gray-400 max-w-md mx-auto">
-              Building digital experiences from Edmonton, Alberta that inspire and engage users worldwide.
+              Building digital experiences from Manolo Fortich, Bukidnon that inspire and engage users worldwide.
             </p>
           </motion.div>
 
