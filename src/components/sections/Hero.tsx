@@ -70,16 +70,6 @@ const Hero: React.FC = () => {
             </span>
           </motion.h1>
 
-          {/* Full Name */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75 }}
-            className="text-lg sm:text-xl text-gray-400 mb-4 tracking-wider"
-          >
-            ALJHON G EMATA
-          </motion.p>
-
           {/* Title */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

@@ -47,12 +47,9 @@ const About: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Panel - Content */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-2 gradient-text">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-6 gradient-text">
               Hello, I'm Jhong
             </h3>
-            <p className="text-lg text-gray-400 mb-6 tracking-wider">
-              ALJHON G EMATA
-            </p>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
                 I'm a passionate Full Stack Developer and UI/UX Designer based in Tankulan, Manolo Fortich, Bukidnon, 
@@ -132,7 +129,7 @@ const About: React.FC = () => {
               className="grid grid-cols-2 gap-4"
             >
               <div className="glass-effect p-4 text-center">
-                <div className="text-2xl font-bold text-primary-400 mb-1">2</div>
+                <div className="text-2xl font-bold text-primary-400 mb-1">4</div>
                 <div className="text-gray-400 text-sm">Years Experience</div>
               </div>
               <div className="glass-effect p-4 text-center">
