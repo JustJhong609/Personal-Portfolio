@@ -82,6 +82,52 @@ const Projects: React.FC = () => {
       live: 'https://green-spaces-manolo.vercel.app/',
       featured: false
     }
+    ,
+    
+    {
+      id: 8,
+      title: 'OJT-Hours-Tracker',
+      description: 'A simple tracker for OJT hours with logging and summaries for trainees.',
+      image: '/api/placeholder/400/250',
+      tags: ['Tracker', 'OJT', 'Logging'],
+      category: 'backend',
+      github: 'https://github.com/JustJhong609/OJT-Hours-Tracker',
+      live: null,
+      featured: false
+    },
+    {
+      id: 9,
+      title: 'AMS-CLUSTER-I',
+      description: 'Cluster I ALS management and resource portal for local education initiatives.',
+      image: '/api/placeholder/400/250',
+      tags: ['Education', 'ALS', 'Portal'],
+      category: 'frontend',
+      github: 'https://github.com/JustJhong609/AMS-CLUSTER-I',
+      live: null,
+      featured: false
+    },
+    {
+      id: 10,
+      title: 'GIS-Research',
+      description: 'Geospatial research utilities and maps for environmental and community projects.',
+      image: '/api/placeholder/400/250',
+      tags: ['GIS', 'Mapping', 'Research'],
+      category: 'data',
+      github: 'https://github.com/JustJhong609/GIS-Research',
+      live: null,
+      featured: false
+    },
+    {
+      id: 11,
+      title: 'PineMap',
+      description: 'Interactive mapping project focused on pine tree distribution and related datasets.',
+      image: '/api/placeholder/400/250',
+      tags: ['Maps', 'Interactive', 'Data'],
+      category: 'frontend',
+      github: 'https://github.com/JustJhong609/PineMap',
+      live: null,
+      featured: false
+    }
   ]
 
   const ProjectCard = ({ project, compact = false }: { project: (typeof featuredProjects)[number] | (typeof moreProjects)[number], compact?: boolean }) => (
