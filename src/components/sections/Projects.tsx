@@ -263,14 +263,3 @@ const Projects: React.FC = () => {
 }
 
 export default Projects
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-export default Projects
