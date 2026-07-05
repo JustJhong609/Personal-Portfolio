@@ -52,8 +52,7 @@ const About: React.FC = () => {
             </h3>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I'm a passionate Full Stack Developer and UI/UX Designer based in Tankulan, Manolo Fortich, Bukidnon, 
-                currently pursuing my Bachelor of Science in Information Technology at Northern Bukidnon State College.
+                I'm a passionate Full Stack Developer and UI/UX Designer based in Tankulan, Manolo Fortich, Bukidnon.
               </p>
               <p>
                 I specialize in designing and developing responsive web applications using React, Next.js, and Ionic React. 

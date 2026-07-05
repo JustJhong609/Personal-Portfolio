@@ -25,19 +25,27 @@ const Projects: React.FC = () => {
       featured: true
     },
     {
-      id: 2,
-      title: 'ALS-AMS',
-      description: 'Ionic-based ALS attendance and monitoring login portal built for quick access to the system dashboard and user workflows.',
+      id: 7,
+      title: 'Digitals',
+      description: "A comprehensive diagnostic application for an Alternative Learning System (ALS) Deped Bukidnon with advance analytics and Comprehensive downloadable data's.",
       image: '/api/placeholder/400/250',
-      tags: ['Ionic', 'Login Portal', 'Attendance', 'Monitoring'],
-      category: 'mobile',
+      tags: ['Diagnostics', 'Alternative Learning System', 'Advanced Analytics', 'Data Download'],
+      category: 'fullstack',
       github: null,
-      live: 'https://ams-ionic.vercel.app/login',
+      live: 'https://als-diag-test.vercel.app/',
       featured: true
-    }
-  ]
-
-  const moreProjects = [
+    },
+    {
+      id: 9,
+      title: 'LANDAS (Learner Access Navigation and Data Analytics System)',
+      description: 'Learner Access Navigation and Data Analytics System (LANDAS) Province wide Deped Bukidnon.',
+      image: '/api/placeholder/400/250',
+      tags: ['Education', 'ALS', 'Portal', 'Analytics'],
+      category: 'frontend',
+      github: 'https://github.com/JustJhong609/AMS-CLUSTER-I',
+      live: 'https://ams-cluster-i.vercel.app/',
+      featured: true
+    },
     {
       id: 3,
       title: 'BUKIDNON ALS CLUSTER I',
@@ -47,6 +55,20 @@ const Projects: React.FC = () => {
       category: 'frontend',
       github: 'https://github.com/JustJhong609/ALS-Cluster-I',
       live: 'https://als-cluster-i.vercel.app/',
+      featured: true
+    }
+  ]
+
+  const moreProjects = [
+    {
+      id: 2,
+      title: 'ALS-AMS',
+      description: 'Ionic-based ALS attendance and monitoring login portal built for quick access to the system dashboard and user workflows.',
+      image: '/api/placeholder/400/250',
+      tags: ['Ionic', 'Login Portal', 'Attendance', 'Monitoring'],
+      category: 'mobile',
+      github: null,
+      live: 'https://ams-ionic.vercel.app/login',
       featured: true
     },
     {
@@ -81,9 +103,7 @@ const Projects: React.FC = () => {
       github: null,
       live: 'https://green-spaces-manolo.vercel.app/',
       featured: false
-    }
-    ,
-    
+    },
     {
       id: 8,
       title: 'OJT-Hours-Tracker',
@@ -92,17 +112,6 @@ const Projects: React.FC = () => {
       tags: ['Tracker', 'OJT', 'Logging'],
       category: 'backend',
       github: 'https://github.com/JustJhong609/OJT-Hours-Tracker',
-      live: null,
-      featured: false
-    },
-    {
-      id: 9,
-      title: 'AMS-CLUSTER-I',
-      description: 'Cluster I ALS management and resource portal for local education initiatives.',
-      image: '/api/placeholder/400/250',
-      tags: ['Education', 'ALS', 'Portal'],
-      category: 'frontend',
-      github: 'https://github.com/JustJhong609/AMS-CLUSTER-I',
       live: null,
       featured: false
     },
