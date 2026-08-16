@@ -1,27 +1,27 @@
 import React, { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { random } from 'maath'
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ChevronDown, Github, Mail } from 'lucide-react'
 import * as THREE from 'three'
 
 // 3D Star field component
-function Stars(props: any) {
-  const ref = useRef<THREE.Group>(null)
-  const [sphere] = useMemo(() => [random.inSphere(new Float32Array(5000), { radius: 1.5 })], [])
+function Stars() {
+  const ref = useRef<THREE.Points>(null)
+  const prefersReducedMotion = useReducedMotion()
+  const [sphere] = useMemo(() => [random.inSphere(new Float32Array(5000), { radius: 1.5 }) as Float32Array], [])
   
   useFrame((_, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10
-      ref.current.rotation.y -= delta / 15
-    }
+    if (prefersReducedMotion || !ref.current) return
+    ref.current.rotation.x -= delta / 10
+    ref.current.rotation.y -= delta / 15
   })
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial transparent color="#3b82f6" size={0.005} sizeAttenuation={true} depthWrite={false} />
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
+        <PointMaterial transparent color="#22c55e" size={0.005} sizeAttenuation={true} depthWrite={false} />
       </Points>
     </group>
   )
@@ -29,13 +29,13 @@ function Stars(props: any) {
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Stars />
         </Canvas>
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.6 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-2"
           >
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent">
               Jhong
             </span>
           </motion.h1>
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
               <span>View My Work</span>
             </button>
             <a 
-              href="https://drive.google.com/file/d/1OF8kY3fBwVz6HK_U6VLwpM1x8aHQUMQ4/view?usp=sharing"
+              href="?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="cyber-button border-accent-500 text-accent-400 hover:text-dark-900"
@@ -123,7 +123,6 @@ const Hero: React.FC = () => {
           >
             {[
               { icon: Github, href: 'https://github.com/JustJhong609', label: 'GitHub' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:20211199@nbsc.edu.ph', label: 'Email' },
             ].map(({ icon: Icon, href, label }, index) => (
               <motion.a
@@ -153,7 +152,7 @@ const Hero: React.FC = () => {
             onClick={scrollToNext}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-primary-400 hover:text-primary-300 transition-colors duration-300"
+            className="text-primary-400 hover:text-accent-400 transition-colors duration-300"
             aria-label="Scroll to next section"
           >
             <ChevronDown size={32} />

@@ -16,9 +16,9 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'Projects', href: '#projects' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
               className="flex items-center space-x-3 cursor-pointer group"
             >
               {/* Logo - Your uploaded logo */}
-              <div className="w-10 h-10 rounded-lg overflow-hidden group-hover:shadow-lg group-hover:shadow-cyan-400/25 transition-all duration-300 group-hover:scale-105">
+              <div className="w-10 h-10 rounded-lg overflow-hidden group-hover:shadow-lg group-hover:shadow-primary-400/25 transition-all duration-300 group-hover:scale-105">
                 <img 
                   src="./logo.png" 
                   alt="Jhong Logo" 
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
               </div>
               
               {/* Text Logo */}
-              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
                 &lt;Jhong/&gt;
               </span>
             </a>
@@ -84,7 +84,10 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              className="text-gray-300 hover:text-white cursor-pointer"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -93,6 +96,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation */}
         <motion.div
+          id="mobile-menu"
           initial={false}
           animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
