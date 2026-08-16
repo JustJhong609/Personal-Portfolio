@@ -8,22 +8,23 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          900: '#1e3a8a',
+          50: '#f0fdf4',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          900: '#14532d',
         },
         accent: {
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
         },
         dark: {
-          900: '#0c0c0c',
-          800: '#1a1a1a',
-          700: '#2d2d2d',
+          900: '#0f172a',
+          800: '#1b2336',
+          700: '#2a3347',
         }
       },
       animation: {
@@ -38,8 +39,8 @@ module.exports = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6' },
-          '100%': { boxShadow: '0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6' },
+          '0%': { boxShadow: '0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e' },
+          '100%': { boxShadow: '0 0 10px #22c55e, 0 0 20px #22c55e, 0 0 30px #22c55e' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
@@ -52,6 +53,7 @@ module.exports = {
       },
       fontFamily: {
         'tech': ['JetBrains Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'monospace'],
+        'sans': ['IBM Plex Sans', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
     },
   },

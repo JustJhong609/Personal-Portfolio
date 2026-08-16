@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         whileHover={{ scale: 1.1, y: -5 }}
-        className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
+        className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-primary-500/25 transition-all duration-300 cursor-pointer"
         aria-label="Scroll to top"
       >
         <ArrowUp className="w-5 h-5" />
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             className="mb-8"
           >
             <div className="flex flex-wrap justify-center space-x-8">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'Projects', 'About', 'Skills', 'Contact'].map((item) => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
+import { Send, Mail, Phone, MapPin, Github } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 
 const Contact: React.FC = () => {
@@ -15,16 +15,40 @@ const Contact: React.FC = () => {
     type: null,
     message: ''
   })
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({})
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     })
+    if (name in errors) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }))
+    }
+  }
+
+  const validate = () => {
+    const newErrors: { name?: string; email?: string; message?: string } = {}
+    if (!formData.name.trim()) newErrors.name = 'Please enter your name.'
+    if (!formData.email.trim()) {
+      newErrors.email = 'Please enter your email.'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.'
+    }
+    if (!formData.message.trim()) newErrors.message = 'Please enter a message.'
+    return newErrors
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    const validationErrors = validate()
+    if (Object.values(validationErrors).some(Boolean)) {
+      setErrors(validationErrors)
+      setStatus({ type: null, message: '' })
+      return
+    }
+    setErrors({})
     setIsSending(true)
     setStatus({ type: null, message: '' })
 
@@ -91,9 +115,7 @@ const Contact: React.FC = () => {
   ]
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/JustJhong609', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' }
+    { icon: Github, href: 'https://github.com/JustJhong609', label: 'GitHub' }
   ]
 
   return (
@@ -121,7 +143,7 @@ const Contact: React.FC = () => {
             className="glass-effect p-8"
           >
             <h3 className="text-2xl font-bold mb-6 gradient-text">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -134,9 +156,14 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary-400 focus:outline-none transition-colors duration-300"
+                    aria-invalid={!!errors.name}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    className={`w-full px-4 py-3 bg-dark-700/50 border rounded-lg text-white placeholder-gray-400 focus:border-primary-400 focus:outline-none transition-colors duration-300 ${errors.name ? 'border-red-500' : 'border-gray-600'}`}
                     placeholder="Your name"
                   />
+                  {errors.name && (
+                    <p id="name-error" className="mt-1 text-sm text-red-400">{errors.name}</p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
@@ -149,9 +176,14 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary-400 focus:outline-none transition-colors duration-300"
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
+                    className={`w-full px-4 py-3 bg-dark-700/50 border rounded-lg text-white placeholder-gray-400 focus:border-primary-400 focus:outline-none transition-colors duration-300 ${errors.email ? 'border-red-500' : 'border-gray-600'}`}
                     placeholder="your.email@example.com"
                   />
+                  {errors.email && (
+                    <p id="email-error" className="mt-1 text-sm text-red-400">{errors.email}</p>
+                  )}
                 </div>
               </div>
               
@@ -181,9 +213,14 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-dark-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary-400 focus:outline-none transition-colors duration-300 resize-none"
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
+                  className={`w-full px-4 py-3 bg-dark-700/50 border rounded-lg text-white placeholder-gray-400 focus:border-primary-400 focus:outline-none transition-colors duration-300 resize-none ${errors.message ? 'border-red-500' : 'border-gray-600'}`}
                   placeholder="Tell me about your project..."
                 />
+                {errors.message && (
+                  <p id="message-error" className="mt-1 text-sm text-red-400">{errors.message}</p>
+                )}
               </div>
               
               <motion.button
@@ -204,6 +241,8 @@ const Contact: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  role="status"
+                  aria-live="polite"
                   className={`p-4 rounded-lg ${
                     status.type === 'success' 
                       ? 'bg-green-500/10 border border-green-500/30 text-green-400' 

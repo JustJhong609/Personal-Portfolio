@@ -61,15 +61,15 @@ const Projects: React.FC = () => {
 
   const moreProjects = [
     {
-      id: 2,
-      title: 'ALS-AMS',
-      description: 'Ionic-based ALS attendance and monitoring login portal built for quick access to the system dashboard and user workflows.',
+      id: 8,
+      title: 'OJT-Hours-Tracker',
+      description: 'A simple tracker for OJT hours with logging and summaries for trainees.',
       image: '/api/placeholder/400/250',
-      tags: ['Ionic', 'Login Portal', 'Attendance', 'Monitoring'],
-      category: 'mobile',
-      github: null,
-      live: 'https://ams-ionic.vercel.app/login',
-      featured: true
+      tags: ['Tracker', 'OJT', 'Logging'],
+      category: 'backend',
+      github: 'https://github.com/JustJhong609/OJT-Hours-Tracker',
+      live: 'https://ojt-hours-tracker-qdsu.vercel.app/',
+      featured: false
     },
     {
       id: 4,
@@ -105,15 +105,15 @@ const Projects: React.FC = () => {
       featured: false
     },
     {
-      id: 8,
-      title: 'OJT-Hours-Tracker',
-      description: 'A simple tracker for OJT hours with logging and summaries for trainees.',
+      id: 2,
+      title: 'ALS-AMS',
+      description: 'Ionic-based ALS attendance and monitoring login portal built for quick access to the system dashboard and user workflows.',
       image: '/api/placeholder/400/250',
-      tags: ['Tracker', 'OJT', 'Logging'],
-      category: 'backend',
-      github: 'https://github.com/JustJhong609/OJT-Hours-Tracker',
-      live: null,
-      featured: false
+      tags: ['Ionic', 'Login Portal', 'Attendance', 'Monitoring'],
+      category: 'mobile',
+      github: null,
+      live: 'https://ams-ionic.vercel.app/login',
+      featured: true
     },
     {
       id: 10,
@@ -150,8 +150,17 @@ const Projects: React.FC = () => {
       className={`glass-effect overflow-hidden group ${compact ? 'border border-white/5' : ''}`}
     >
       <div className="relative overflow-hidden">
-        <div className={`w-full ${compact ? 'h-40' : 'h-48'} bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center`}>
+        <div className={`relative w-full ${compact ? 'h-40' : 'h-48'} bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center`}>
           <Eye className={`${compact ? 'w-12 h-12' : 'w-16 h-16'} text-primary-400/50`} />
+          {project.image && (
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              loading="lazy"
+              onError={(e) => { e.currentTarget.style.display = 'none' }}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
         </div>
         <div className="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
           {project.github && (

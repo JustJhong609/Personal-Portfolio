@@ -131,7 +131,7 @@ const Skills: React.FC = () => {
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ 
                   scale: 1.1,
-                  boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+                  boxShadow: '0 0 20px rgba(34, 197, 94, 0.5)'
                 }}
                 className="px-4 py-2 bg-dark-700/50 border border-primary-500/30 rounded-full text-gray-300 hover:text-primary-400 hover:border-primary-400/50 transition-all duration-300 cursor-pointer"
               >
