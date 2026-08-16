@@ -75,7 +75,7 @@ const About: React.FC = () => {
               transition={{ delay: 0.4 }}
             >
               <a 
-                href="https://drive.google.com/file/d/1OF8kY3fBwVz6HK_U6VLwpM1x8aHQUMQ4/view?usp=sharing"
+                href="?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cyber-button"
