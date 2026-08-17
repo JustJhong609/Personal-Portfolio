@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'NORTHERN BUKIDNON STATE COLLEGE Entity Extraction System',
       description: 'Web-based system that extracts and organizes entities from student research abstracts using Dandelion API and Supabase. Features include automated entity extraction, visualization tools, and role-based access for students and faculty.',
-      image: '/api/placeholder/400/250',
+      image: '/images/NBSC Xtrack.png',
       tags: ['Dandelion API', 'Supabase', 'Entity Extraction', 'Visualization'],
       category: 'fullstack',
       github: 'https://github.com/JustJhong6099/nbsccite-auth',
@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
       id: 7,
       title: 'Digitals',
       description: "A comprehensive diagnostic application for an Alternative Learning System (ALS) Deped Bukidnon with advance analytics and Comprehensive downloadable data's.",
-      image: '/api/placeholder/400/250',
+      image: '/images/dIGITALS.png',
       tags: ['Diagnostics', 'Alternative Learning System', 'Advanced Analytics', 'Data Download'],
       category: 'fullstack',
       github: null,
@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
       id: 9,
       title: 'LANDAS (Learner Access Navigation and Data Analytics System)',
       description: 'Learner Access Navigation and Data Analytics System (LANDAS) Province wide Deped Bukidnon.',
-      image: '/api/placeholder/400/250',
+      image: '/images/Landas.png',
       tags: ['Education', 'ALS', 'Portal', 'Analytics'],
       category: 'frontend',
       github: 'https://github.com/JustJhong609/AMS-CLUSTER-I',
@@ -50,7 +50,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: 'BUKIDNON ALS CLUSTER I',
       description: 'A static website for ALS Cluster 1 - Alternative Learning System, built with HTML and Tailwind CSS for easy access to learning resources.',
-      image: '/api/placeholder/400/250',
+      image: '/images/Bukidnon ALS Cluster I.png',
       tags: ['HTML', 'Tailwind CSS', 'Static Site', 'Education'],
       category: 'frontend',
       github: 'https://github.com/JustJhong609/ALS-Cluster-I',
@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
       id: 8,
       title: 'OJT-Hours-Tracker',
       description: 'A simple tracker for OJT hours with logging and summaries for trainees.',
-      image: '/api/placeholder/400/250',
+      image: '/images/OJT Tracker.png',
       tags: ['Tracker', 'OJT', 'Logging'],
       category: 'backend',
       github: 'https://github.com/JustJhong609/OJT-Hours-Tracker',
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
       id: 4,
       title: 'File-Encryption-Decryption',
       description: 'Enterprise-grade file encryption/decryption utility with comprehensive security features, performance optimizations, and production-ready error handling.',
-      image: '/api/placeholder/400/250',
+      image: null,
       tags: ['Encryption', 'Security', 'File Processing', 'Enterprise'],
       category: 'backend',
       github: 'https://github.com/JustJhong609/File-Encryption-Decryption',
@@ -86,7 +86,7 @@ const Projects: React.FC = () => {
       id: 5,
       title: 'habi-2026',
       description: 'A Vercel-deployed project card for the habi-2026 build, kept compact inside the see more section.',
-      image: '/api/placeholder/400/250',
+      image: null,
       tags: ['Vercel', 'Deployment', 'Portfolio'],
       category: 'frontend',
       github: null,
@@ -97,7 +97,7 @@ const Projects: React.FC = () => {
       id: 6,
       title: 'green-spaces-manolo',
       description: 'A clean project card for green-spaces-manolo, grouped into the expandable section to keep the layout minimal.',
-      image: '/api/placeholder/400/250',
+      image: null,
       tags: ['Vercel', 'Landing Page', 'Deployment'],
       category: 'frontend',
       github: null,
@@ -108,7 +108,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: 'ALS-AMS',
       description: 'Ionic-based ALS attendance and monitoring login portal built for quick access to the system dashboard and user workflows.',
-      image: '/api/placeholder/400/250',
+      image: null,
       tags: ['Ionic', 'Login Portal', 'Attendance', 'Monitoring'],
       category: 'mobile',
       github: null,
@@ -119,7 +119,7 @@ const Projects: React.FC = () => {
       id: 10,
       title: 'GIS-Research',
       description: 'Geospatial research utilities and maps for environmental and community projects.',
-      image: '/api/placeholder/400/250',
+      image: null,
       tags: ['GIS', 'Mapping', 'Research'],
       category: 'data',
       github: 'https://github.com/JustJhong609/GIS-Research',
@@ -130,7 +130,7 @@ const Projects: React.FC = () => {
       id: 11,
       title: 'PineMap',
       description: 'Interactive mapping project focused on pine tree distribution and related datasets.',
-      image: '/api/placeholder/400/250',
+      image: null,
       tags: ['Maps', 'Interactive', 'Data'],
       category: 'frontend',
       github: 'https://github.com/JustJhong609/PineMap',
@@ -151,8 +151,7 @@ const Projects: React.FC = () => {
     >
       <div className="relative overflow-hidden">
         <div className={`relative w-full ${compact ? 'h-40' : 'h-48'} bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center`}>
-          <Eye className={`${compact ? 'w-12 h-12' : 'w-16 h-16'} text-primary-400/50`} />
-          {project.image && (
+          {project.image ? (
             <img
               src={project.image}
               alt={`${project.title} preview`}
@@ -160,6 +159,8 @@ const Projects: React.FC = () => {
               onError={(e) => { e.currentTarget.style.display = 'none' }}
               className="absolute inset-0 w-full h-full object-cover"
             />
+          ) : (
+            <Eye className={`${compact ? 'w-12 h-12' : 'w-16 h-16'} text-primary-400/50`} />
           )}
         </div>
         <div className="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
